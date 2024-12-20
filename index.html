@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="tali-wind.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+    <link rel="stylesheet" href="script-and-css-or-external-file/index.css" />
+    <title>Jhalokati Expess</title>
+    <style></style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="overflow-x-hidden">
+      <!-- header start  -->
+      <header>
+        <nav
+          class="w-[100vw] mx-auto bg-orange-500 py-2 md:py-10 items-center fixed left-0 top-0"
+        >
+          <div class="w-full items-center flex justify-around">
+            <img src="image/logo.png" class="w-40 hidden md:block" alt="logo" />
+            <div class="relative w-[70%]">
+              <input type="search" class="w-full h-8" id="search-input-field" />
+              <div
+                class="absolute h-6 right-1 top-1 grid place-items-center"
+                id="search-btn"
+              >
+                <i class="fa-solid fa-magnifying-glass text-[#3a80ea]"></i>
+              </div>
+            </div>
+            <i class="fa-solid fa-cart-shopping w-3 text-white"> </i
+            ><i class="fa-solid fa-house px-2 w-3 text-white mr-2"></i>
+          </div>
+          <div id="nav-filter-div" class="px-3 md:px-10 bg-white"></div>
+        </nav>
+      </header>
+      <!--  -->
+      <section
+        id="main-product-section"
+        class="w-[100vw] min-h-screen px-[2vw] mx-auto py-20 md:py-36 grid gap-2 md:gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 bg-white bg-cover bg-no-repeat bg-center"
+      ></section>
+    </main>
+
+    <!--  =================== script ================= -->
+    <script src="script-and-css-or-external-file/basic-js-or-index.js"></script>
+    <script
+      type="module"
+      src="https://solaymanmollik.github.io/mywalton/product-data.js"
+    ></script>
+    <script
+      type="module"
+      src="script-and-css-or-external-file/main.js"
+    ></script>
+
+    <script src="script-and-css-or-external-file/product-data.js"></script>
+    <script
+      type="module"
+      src="script-and-css-or-external-file/search.js"
+    ></script>
+    <script
+      type="module"
+      src="script-and-css-or-external-file/stheFileExportProductDataIdToOtherFileWhenUserClickAnyProDuct.js"
+    ></script>
+  </body>
+</html>
