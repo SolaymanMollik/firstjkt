@@ -7,14 +7,93 @@
     <link rel="stylesheet" href="script-and-css-or-external-file/index.css" />
     <title>Jhalokati Expess</title>
   </head>
-  <body>
+  <body class="bg-[#fff]">
     <main class="overflow-x-hidden relative">
-      <section class="bg-white min-h-screen">
-        <div
-          id="product-preview-sec"
-          class="w-screen px-0 md:px-28 block md:grid grid-cols-1 relative md:grid-cols-2 bg-white"
-        ></div>
-        <div id="longDes" class="bg-white px-5 md:px-20 pb-20"></div>
+      <header id="header">
+        <nav
+          class="w-[100vw] mx-auto bg-orange-500 h-16 md:h-20 items-center flex justify-center"
+        >
+          <img src="image/logo.png" class="w-20 md:w-40" alt="logo" />
+        </nav>
+      </header>
+      <section
+        class="bg-[#fff] grid max-w-[1800px] grid-cols-1 md:grid-cols-2 gap-2 py-0 md:py-10 mx-auto"
+        id="product-preview-section"
+      >
+        <div class="">
+          <div class="big-img-div w-full md:w-4/5 mx-auto">
+            <img
+              class="w-full rounded-none md:rounded-2xl"
+              src="image/1000.webp"
+              alt="main image"
+              id="main-image"
+            />
+          </div>
+          <div
+            class="w-4/5 mx-auto flex justify-center items-center gap-3 mt-7"
+            id="img-thumb-div"
+          >
+            <img
+              class="img-thumb w-1/5 aspect-square rounded-lg hover:blur-sm"
+              src="image/1000.webp"
+              alt=""
+            />
+            <img
+              class="img-thumb w-1/5 aspect-square rounded-lg hover:blur-sm"
+              src="image/1001.webp"
+              alt=""
+            />
+            <img
+              class="img-thumb w-1/5 aspect-square rounded-lg hover:blur-sm"
+              src="image/1002.webp"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid items-center font-sans">
+          <div class="w-[90%] mx-auto">
+            <h1 class="text-2xl md:text-3xl font-bold text-black" id="des-Eng">
+              Fall Limited Edition Sneakers
+            </h1>
+            <h1
+              class="text-xl md:text-2xl font-bold text-black"
+              id="des-bangla"
+            >
+              মসলাদার ফ্রাইড চিকেন।
+            </h1>
+            <p class="price text-3xl mt-10 font-bold" id="price">$125.00</p>
+            <div class="my-5 text-xl font-light" id="long-des"></div>
+
+            <div
+              class="btn-div w-[100%] md:w-[90%] mx-auto block md:flex justify-between items-center pt-8 cursor-pointer"
+            >
+              <div
+                class="count-div text-2xl flex justify-between bg-slate-100 w-full md:w-[40%] h-12 font-bold rounded-md mb-4 md:mb-0"
+              >
+                <span
+                  class="w-[25%] grid place-items-center text-orange-400"
+                  id="count-plus"
+                  >-</span
+                >
+                <span
+                  class="w-[25%] grid place-items-center text-base"
+                  id="product-quntity"
+                  >1</span
+                >
+                <span
+                  class="w-[25%] grid place-items-center text-orange-400"
+                  id="count-minus"
+                  >+</span
+                >
+              </div>
+              <div
+                class="add-to-cart-btn font-bold rounded-md hover:bg-orange-600 transition w-full md:w-[55%] h-12 grid place-items-center text-white bg-orange-500"
+              >
+                Add To Cart
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <script
@@ -29,5 +108,6 @@
       type="module"
       src="script-and-css-or-external-file/getProductId.js"
     ></script>
+    <script src="script-and-css-or-external-file/basic-js-or-index.js"></script>
   </body>
 </html>
