@@ -2,55 +2,64 @@ import * as productData from "./product-data.js";
 
 let data = productData.productList;
 
-let productPreviewSec = document.getElementById("product-preview-sec");
+let productPreviewSec = document.getElementById("product-preview-section");
+let imgThumbDiv = document.getElementById("img-thumb-div");
 
-let h1, price, text, image;
+let productId = localStorage.getItem("product-preview-id");
+let product = data.filter((x) => x.id == productId)[0];
 
-window.addEventListener("load", () => {
-  const theFunction = () => {
-    let id = localStorage.getItem("product-preview-id");
-    data.forEach((data) => {
-      if (data.id == id) {
-        h1 = data.desEng + " <br/> " + data.desBangla;
-        price = data.price;
-        image = data.image;
-        text = data.longDes;
-      }
-    });
+/**
+ * add all heading
+ */
+let desBangla = document.getElementById("des-bangla");
+let desEng = document.getElementById("des-Eng");
+let price = document.getElementById("price");
+desEng.innerHTML = product.desEng;
+desBangla.innerHTML = product.desBangla;
+price.innerHTML = product.price + " ৳";
 
-    let html = `
-  <div class="p-0 md:p-5 block md:grid place-items-center">
-    <img src="${image}" alt="" class="w-full" />
-  </div>
-  <div class="grid place-items-center">
-    <div class="w-[96%] mx-auto px-0 md:px-5">
-      <h2 class="text-xl">${h1}</h2>
-      <h3 class="text-3xl text-orange-500 mt-2"> ৳ ${price}</h3>
-      <div class="p-5 flex gap-4">
-        <div class="w-10 aspect-square border border-orange-500 cursor-pointer grid place-items-center text-2xl">-</div>
-        <div class="grid place-items-center">1</div>
-        <div class="w-10 aspect-square border border-orange-500 cursor-pointer grid place-items-center text-2xl">+</div>
-      </div>
-      <p id="delivery-date" class="mb-5">Delevery Date : 20 november - 22 november</p>
-    </div>
-  </div>
-  <div id="add-to-cart-btn" class="py-3 w-full text-white bg-orange-500 grid place-items-center fixed bottom-0 left-0 cursor-pointer">
-    Add To Cart
-  </div>
-  
-  `;
+/**
+ * product quantity set
+ */
 
-    productPreviewSec.innerHTML = html;
+let itemQuntity = document.getElementById("product-quntity");
+let minus = document.getElementById("count-plus");
+let plus = document.getElementById("count-minus");
+let count = 1;
+itemQuntity.innerHTML = count;
+plus.addEventListener("click", () => {
+  count++;
+  itemQuntity.innerHTML = count;
+});
+minus.addEventListener("click", () => {
+  if (count > 1) {
+    count--;
+    itemQuntity.innerHTML = count;
+  }
+});
 
-    let previewDiv = document.getElementById("longDes");
-    const lines = text.trim().split("\n");
-    lines.forEach((line) => {
-      const p = document.createElement("p");
-      p.textContent = line.trim();
-      previewDiv.appendChild(p);
-    });
-  };
+/**
+ * make the image
+ */
 
-  // the time out for the function fully load
-  setTimeout(theFunction, 300);
+// img carusel start here
+let mainImg = document.getElementById("main-image");
+let imgThumb = document.querySelectorAll(".img-thumb");
+imgThumb.forEach((img) => {
+  img.addEventListener("click", () => {
+    mainImg.src = img.src;
+  });
+});
+
+/**
+ * img thumb set here
+ */
+let longDes = document.getElementById("long-des");
+let text = product.longDes;
+const lines = text.trim().split("\n");
+
+lines.forEach((line) => {
+  const p = document.createElement("p");
+  p.textContent = line.trim();
+  longDes.appendChild(p);
 });
